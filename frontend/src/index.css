@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+:root {
+  --addme-red: #8B0000;
+  --addme-red-mid: #A50000;
+  --addme-green: #B8F568;
+  --addme-green-light: #B8F568;
+  --addme-green-lime: #B8F568;
+  --addme-bg: #FAF6F1;
+  --addme-card-bg: #FFFFFF;
+  --addme-text-dark: #1A1A1A;
+  --addme-border: #E8E0D8;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--addme-bg);
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app-shell {
+  width: 100%;
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+  background: var(--addme-bg);
+}
+
+@media (min-width: 768px) {
+  body {
+    background: #E8E0D8;
+  }
+
+  .app-shell {
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+.desktop-two-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .desktop-two-col {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 80px;
+    gap: 60px;
+  }
+}
+
+.desktop-content {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 20px 24px;
+}
+
+@media (min-width: 768px) {
+  .desktop-content {
+    padding: 40px 60px;
+  }
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--addme-bg);
+  scrollbar-width: none;
+}
+
+.screen::-webkit-scrollbar {
+  display: none;
+}
+
+.btn-primary {
+  background: var(--addme-green);
+  color: #1A1A1A;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 16px 32px;
+  width: 100%;
+  font-size: 17px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #1A1A1A;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 14px 32px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1.5px solid #C8C0B8;
+  font-family: 'Nunito', sans-serif;
+  transition: opacity 0.2s;
+}
+
+.btn-danger {
+  background: #8B0000;
+  color: white;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 16px 32px;
+  width: 100%;
+  font-size: 17px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Nunito', sans-serif;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-danger:active {
+  transform: scale(0.97);
+}
+
+.option-card {
+  background: white;
+  border-radius: 16px;
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s, background 0.2s;
+  font-weight: 700;
+  font-size: 13px;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+}
+
+.option-card.selected {
+  border-color: var(--addme-green);
+  background: #F0FAF0;
+}
+
+.option-card .icon-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #F0F0F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.option-card.selected .icon-circle {
+  background: var(--addme-green);
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--addme-bg);
+}
+
+.addme-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.addme-logo .logo-main {
+  font-size: 22px;
+  font-weight: 900;
+  color: #8B0000;
+  font-family: 'Nunito', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.addme-logo .logo-sub {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--addme-green);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--addme-green);
+  color: white;
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+.close-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #8B0000;
+  font-size: 22px;
+}
+
+.progress-dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.progress-dots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #DDD;
+}
+
+.progress-dots .dot.active {
+  background: #8B0000;
+  width: 20px;
+  border-radius: 5px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1.5px solid #E0D8D0;
+  background: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: var(--addme-green);
+}
+
+.chef-card-template {
+  background: linear-gradient(135deg, #8B0000 0%, #6B0000 50%, #8B0000 100%);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  min-height: 420px;
+}
+
+@keyframes progress-fill {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: var(--target-width);
+  }
+}
