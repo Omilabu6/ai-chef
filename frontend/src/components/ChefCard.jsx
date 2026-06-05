@@ -54,7 +54,19 @@ const ChefCard = forwardRef(function ChefCard({ data }, ref) {
         }}
       />
 
-
+      <img src="/food.png" alt="" 
+       style={{
+           position: 'absolute',
+          bottom: '-5%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '60%',
+          zIndex: 10,
+          display: 'flex',
+          alignItems: 'flex-end',
+          justifyContent: 'center',
+        }}
+        />
       {photo && (
         <div style={{
           position: 'absolute',
